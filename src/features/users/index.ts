@@ -1,2 +1,2 @@
-export * from './users.entity';
-export * from './users.routes';
+export * from './entities/users.entity';
+export * from './routes/users.routes';
