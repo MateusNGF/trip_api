@@ -13,6 +13,7 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 2020,
+    legacyDecorators: true,
   },
   rules: {
     'no-console':
@@ -34,5 +35,13 @@ module.exports = {
       },
     ],
     'import/no-unresolved': ['error', { ignore: ['^@/'] }],
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
+        trailingComma: 'es5',
+        semi: true,
+      },
+    ],
   },
 };

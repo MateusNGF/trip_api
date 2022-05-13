@@ -1,18 +1,15 @@
 {
   "compilerOptions": {
-     "lib": [
-        "es5",
-        "es6"
-     ],
-     "target": "es2017",
-     "module": "commonjs",
-     "esModuleInterop": true,
-     "moduleResolution": "node",
-     "outDir": "./build",
-     "emitDecoratorMetadata": true,
-     "experimentalDecorators": true,
-     "resolveJsonModule": true,
-     "skipLibCheck": true,
-     "sourceMap": false
+    "lib": ["es5", "es6"],
+    "target": "es2017",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": false
   }
 }

@@ -1,4 +1,7 @@
-const DEV = (process.argv[2] !== 'dev' || process.argv[2] === undefined) ? false : true
+const DEV =
+  process.argv[2] !== 'dev' || process.argv[2] === undefined
+    ? false
+    : true;
 
 var ormconfig = {
    "name": "default",
@@ -8,7 +11,7 @@ var ormconfig = {
    "synchronize": true,
    "logging": false,
    "entities": [
-      `${(DEV) ? "src/core/**/*.entity.ts" : "build/core/**/*.entity.js"}`
+      `${(DEV) ? "src/features/**/*.entity.ts" : "build/features/**/*.entity.js"}`
    ],
    "migrations": [
       `${(DEV) ? "src/database/migration/**/*.ts" : "build/database/migration/**/*.js"}`
@@ -23,4 +26,4 @@ var ormconfig = {
    "extra": { "ssl": { "rejectUnauthorized": false } }
 }
 
-module.exports = ormconfig
+module.exports = ormconfig;
