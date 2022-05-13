@@ -8,19 +8,17 @@ var ormconfig = {
    "synchronize": true,
    "logging": false,
    "entities": [
-      `${(DEV) ? "src/*/*.entity.ts" : "build/*/*.entity.js"}`
+      `${(DEV) ? "src/core/**/*.entity.ts" : "build/core/**/*.entity.js"}`
    ],
    "migrations": [
       `${(DEV) ? "src/database/migration/**/*.ts" : "build/database/migration/**/*.js"}`
    ],
-//    "subscribers": [
-//       `${(DEV) ? "src/subscriber/**/*.ts" : "build/subscriber/**/*.js"}`
-//    ],
-//    "cli": {
-//       "entitiesDir": "src/entity",
-//       "migrationsDir": "src/database/migration",
-//       "subscribersDir": "src/subscriber"
-//    },
+   "subscribers": [
+      `${(DEV) ? "src/database/subscriber/**/*.ts" : "build/database/subscriber/**/*.js"}`
+   ],
+   "cli": {
+      "migrationsDir": "src/database/migrations"
+   },
    "ssl": true,
    "extra": { "ssl": { "rejectUnauthorized": false } }
 }

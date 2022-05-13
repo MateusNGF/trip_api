@@ -1,5 +1,5 @@
 import express from 'express';
-import {userRoutes} from './users'
+import {userRoutes} from './core/'
 
 import "reflect-metadata";
 import { createConnection } from "typeorm";
