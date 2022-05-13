@@ -1,4 +1,4 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { City } from "../citys/city.entity"
 
 @Entity("TouristSpots")
@@ -6,13 +6,8 @@ export class TouristSpots extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number
 
-  @ManyToOne(() => City)
-  @JoinColumn({ name: "idCity" })
+  @ManyToOne(type => City, citys => citys.id)
   city: City
-
-  @Column()
-  idCity: number
-
 
   @Column()
   address: string
