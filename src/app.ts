@@ -1,8 +1,6 @@
 import express from 'express';
-import 'reflect-metadata';
 import { createConnection } from 'typeorm';
-
-import { userRoutes } from './features/users';
+import { userRoutes } from './features';
 
 const app = express();
 

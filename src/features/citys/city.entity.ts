@@ -1,24 +1,21 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity} from "typeorm"
 
-@Entity("Users")
-export class User extends BaseEntity {
+@Entity("Citys")
+export class City extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number
 
   @Column({ name: "name", nullable: false })
   name: string
 
-  @Column({ name: "username", nullable: false })
-  username: string
+  @Column({ name: "zip_code", nullable: false })
+  zipCode: string
 
-  @Column({ name: "email", nullable : false })
-  email: string
+  @Column({ name: "state", nullable : false })
+  state: string
 
-  @Column({ name: "password", nullable : false })
-  password: string
-
-  @Column({ name: "is_adm", default : false })
-  isAdm: boolean
+  @Column({ name: "country", nullable : false })
+  country: string
 
   @CreateDateColumn({name: "create_at"})
   createAt : Date

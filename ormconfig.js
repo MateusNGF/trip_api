@@ -4,30 +4,26 @@ const DEV =
     : true;
 
 var ormconfig = {
-  name: 'default',
-  type: 'postgres',
-  url: process.env.DATABASE_URL,
-  migrationsRun: true,
-  synchronize: true,
-  logging: false,
-  entities: [`${DEV ? 'src/*/*.entity.ts' : 'build/*/*.entity.js'}`],
-  migrations: [
-    `${
-      DEV
-        ? 'src/database/migration/**/*.ts'
-        : 'build/database/migration/**/*.js'
-    }`,
-  ],
-  //    "subscribers": [
-  //       `${(DEV) ? "src/subscriber/**/*.ts" : "build/subscriber/**/*.js"}`
-  //    ],
-  //    "cli": {
-  //       "entitiesDir": "src/entity",
-  //       "migrationsDir": "src/database/migration",
-  //       "subscribersDir": "src/subscriber"
-  //    },
-  ssl: true,
-  extra: { ssl: { rejectUnauthorized: false } },
-};
+   "name": "default",
+   "type": "postgres",
+   "url": process.env.DATABASE_URL,
+   "migrationsRun": true,
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      `${(DEV) ? "src/features/**/*.entity.ts" : "build/features/**/*.entity.js"}`
+   ],
+   "migrations": [
+      `${(DEV) ? "src/database/migration/**/*.ts" : "build/database/migration/**/*.js"}`
+   ],
+   "subscribers": [
+      `${(DEV) ? "src/database/subscriber/**/*.ts" : "build/database/subscriber/**/*.js"}`
+   ],
+   "cli": {
+      "migrationsDir": "src/database/migrations"
+   },
+   "ssl": true,
+   "extra": { "ssl": { "rejectUnauthorized": false } }
+}
 
 module.exports = ormconfig;
