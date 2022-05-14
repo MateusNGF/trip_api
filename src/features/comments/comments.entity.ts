@@ -13,11 +13,11 @@ export class Comments extends BaseEntity {
   id?: number
 
   @ManyToOne(type => TouristSpots, touristSpot => touristSpot.id)
-  @JoinColumn({ name: "touristSpotsId" })
+  @JoinColumn({ name: "tourist_spots_id" })
   touristSpot: string
 
   @OneToOne(type => User, user => user.id)
-  @JoinColumn({ name: "userId" })
+  @JoinColumn({ name: "user_id" })
   user: string
 
   @Column()
@@ -26,9 +26,9 @@ export class Comments extends BaseEntity {
   @Column()
   evaluation: number
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name : "created_at"})
   createdAt?: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name : "update_at"})
   updatedAt?: Date
 }
