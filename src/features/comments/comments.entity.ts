@@ -16,7 +16,7 @@ export class Comments extends BaseEntity {
   @JoinColumn({ name: "tourist_spots_id" })
   touristSpot: string
 
-  @OneToOne(type => User, user => user.id)
+  @ManyToOne(type => User, user => user.id)
   @JoinColumn({ name: "user_id" })
   user: string
 
