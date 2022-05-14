@@ -9,8 +9,8 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/user', userRoutes);
 app.use('/city', cityRoute);
-app.use("/spot", touristSpotsRoutes);
-app.use("/comment", commentsRoutes);
+app.use('/spot', touristSpotsRoutes);
+app.use('/comment', commentsRoutes);
 
 
 export default app;

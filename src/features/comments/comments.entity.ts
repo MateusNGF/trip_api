@@ -26,9 +26,9 @@ export class Comments extends BaseEntity {
   @Column()
   evaluation: number
 
-  @CreateDateColumn({ name : "created_at"})
+  @CreateDateColumn({ name: "created_at" })
   createdAt?: Date
 
-  @UpdateDateColumn({ name : "update_at"})
+  @UpdateDateColumn({ name: "update_at" })
   updatedAt?: Date
 }
