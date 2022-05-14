@@ -1,0 +1,1 @@
+export * from './tourist_spots.entity'

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "typeorm": "ts-node ./node_modules/typeorm/cli -f ./ormconfig.json",
-    "start:dev": "nodemon src/app.ts dev",
+    "start:dev": "nodemon src/server.ts dev",
     "build": "npx tsc"
   },
   "repository": {

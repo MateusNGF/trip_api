@@ -2,8 +2,14 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 
 @Entity("Users")
 export class User extends BaseEntity {
+
+  constructor(user){
+    super()
+    Object.assign(this, user)
+  }
+
   @PrimaryGeneratedColumn()
-  id: number
+  id?: number
 
   @Column({ name: "name", nullable: false })
   name: string
@@ -18,11 +24,11 @@ export class User extends BaseEntity {
   password: string
 
   @Column({ name: "is_adm", default : false })
-  isAdm: boolean
+  isAdm ?: boolean
 
   @CreateDateColumn({name: "create_at"})
-  createAt : Date
+  createAt ?: Date
 
   @UpdateDateColumn({name: "update_at"})
-  updateAt : Date
+  updateAt ?: Date
 }

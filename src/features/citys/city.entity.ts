@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity("Citys")
 export class City extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id: number
+  id?: number
 
   @Column({ name: "name", nullable: false })
   name: string
@@ -18,8 +18,8 @@ export class City extends BaseEntity {
   country: string
 
   @CreateDateColumn({name: "create_at"})
-  createAt : Date
+  createAt ?: Date
 
   @UpdateDateColumn({name: "update_at"})
-  updateAt : Date
+  updateAt ?: Date
 }

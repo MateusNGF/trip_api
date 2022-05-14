@@ -1,12 +1,13 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { City } from "../citys/city.entity"
 
 @Entity("TouristSpots")
 export class TouristSpots extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id: number
+  id?: number
 
   @ManyToOne(type => City, citys => citys.id)
+  @JoinColumn({ name : "city"})
   city: City
 
   @Column()
@@ -28,8 +29,8 @@ export class TouristSpots extends BaseEntity {
   story: string
 
   @CreateDateColumn()
-  createdAt: Date
+  createdAt?: Date
 
   @UpdateDateColumn()
-  updatedAt: Date
+  updatedAt?: Date
 }
