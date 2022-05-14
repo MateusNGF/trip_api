@@ -1,20 +1,26 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { City } from "../citys/city.entity"
 
-@Entity("TouristSpots")
+import { City } from "../citys/city.entity"
+@Entity("tourist_spots")
 export class TouristSpots extends BaseEntity {
+
+  constructor(user){
+    super()
+    Object.assign(this, user)
+  }
+
   @PrimaryGeneratedColumn()
   id?: number
 
-  @ManyToOne(type => City, citys => citys.id)
-  @JoinColumn({ name : "city"})
-  city: City
+  @ManyToOne(type => City, city => city.id)
+  @JoinColumn({ name : "city_id"})
+  city : string
 
   @Column()
   address: string
 
   @Column()
-  number: string
+  number: number
 
   @Column()
   zipCode: string
@@ -34,3 +40,5 @@ export class TouristSpots extends BaseEntity {
   @UpdateDateColumn()
   updatedAt?: Date
 }
+
+

@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity} from "typeorm"
 
-@Entity("Users")
+@Entity("users")
 export class User extends BaseEntity {
 
   constructor(user){
@@ -17,8 +17,8 @@ export class User extends BaseEntity {
   @Column({ name: "username", nullable: false })
   username: string
 
-  @Column({ name: "email", nullable : false })
-  email: string
+  @Column({ name: " email", nullable : false })
+  email : string
 
   @Column({ name: "password", nullable : false })
   password: string
