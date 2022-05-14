@@ -30,8 +30,10 @@ AdmRouters.get("/login", async (req, res) => {
         })
     
         if (!foundedAdm) throw { status : 400, message : "User not found"}
+
+        return res.send(foundedAdm)
+
     }catch(error){
         res.status(+error.status).send(error.message)
     }
-
 })
