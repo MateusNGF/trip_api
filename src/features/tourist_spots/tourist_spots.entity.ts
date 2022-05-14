@@ -14,7 +14,7 @@ export class TouristSpots extends BaseEntity {
 
   @ManyToOne(type => City, city => city.id)
   @JoinColumn({ name : "city_id"})
-  city : string
+  city : City
 
   @Column()
   address: string
