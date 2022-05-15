@@ -10,7 +10,7 @@ export class CommentImage extends BaseEntity {
   }
 
   @PrimaryGeneratedColumn()
-  id: number
+  id?: number
 
   @ManyToOne(type => Comments, comment => comment.id)
   @JoinColumn({ name: "comment_id" })
