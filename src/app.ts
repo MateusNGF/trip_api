@@ -11,6 +11,7 @@ app.use('/user', userRoutes);
 app.use('/city', cityRoute);
 app.use('/spot', touristSpotsRoutes);
 app.use('/comment', commentsRoutes);
+app.use('/touristSpotImage', touristSpotsRoutes)
 
 
 export default app;
