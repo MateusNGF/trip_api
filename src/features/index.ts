@@ -1,3 +1,7 @@
 export * from './users'
 export * from './citys'
 export * from './tourist_spots'
+export * from './comments'
+export * from './touristSpotsImages'
+export * from './commentsImage'
+export * from './rentals'
