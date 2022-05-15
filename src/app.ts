@@ -1,18 +1,16 @@
 import express from 'express';
-import { createConnection } from 'typeorm';
-import { userRoutes } from './features';
+import { userRoutes, cityRoute, touristSpotsRoutes } from './features';
+import { commentsRoutes } from './features/comments';
 
 const app = express();
 
-app.use('/user', userRoutes);
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-try {
-  createConnection();
-  app.listen(8080, () => {
-    console.log('Servidor ta bala.');
-  });
-} catch (erro) {
-  console.log('error');
-}
+app.use('/user', userRoutes);
+app.use('/city', cityRoute);
+app.use('/spot', touristSpotsRoutes);
+app.use('/comment', commentsRoutes);
+
 
 export default app;
