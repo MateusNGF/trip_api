@@ -1,6 +1,5 @@
 import express from 'express';
-import { userRoutes, cityRoute, touristSpotsRoutes } from './features';
-import { commentsRoutes } from './features/comments';
+import { userRoutes, cityRoute, touristSpotsRoutes, commentsRoutes, touristSpotImageRoutes } from './features';
 
 const app = express();
 
@@ -11,7 +10,7 @@ app.use('/user', userRoutes);
 app.use('/city', cityRoute);
 app.use('/spot', touristSpotsRoutes);
 app.use('/comment', commentsRoutes);
-app.use('/touristSpotImage', touristSpotsRoutes)
+app.use('/touristSpotImage', touristSpotImageRoutes)
 
 
 export default app;
