@@ -13,7 +13,7 @@ export class TouristSpotsImages extends BaseEntity {
     id?: number
 
     @ManyToOne(type => TouristSpots, touristspot => touristspot.id)
-    @JoinColumn({ name: "tourist_spot" })
+    @JoinColumn({ name: "tourist_spot_id" })
     touristSpot: string
 
     @ManyToOne(type => User, user => user.id)
