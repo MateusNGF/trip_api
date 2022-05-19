@@ -23,9 +23,9 @@ export class City extends BaseEntity {
   @Column({ name: "country", nullable : false })
   country?: string
 
-  @CreateDateColumn({name: "create_at"})
-  createAt ?: Date
+  @CreateDateColumn({name: "created_at"})
+  createdAt ?: Date
 
-  @UpdateDateColumn({name: "update_at"})
-  updateAt ?: Date
+  @UpdateDateColumn({name: "updated_at"})
+  updatedAt ?: Date
 }

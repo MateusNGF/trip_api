@@ -22,7 +22,7 @@ export class TouristSpots extends BaseEntity {
   @Column()
   number: number
 
-  @Column()
+  @Column({ name: "zip_code" })
   zipCode: string
 
   @Column()
@@ -34,11 +34,11 @@ export class TouristSpots extends BaseEntity {
   @Column()
   story: string
 
-  @CreateDateColumn()
-  createdAt?: Date
+  @CreateDateColumn({name: "created_at"})
+  createdAt: Date
 
-  @UpdateDateColumn()
-  updatedAt?: Date
+  @UpdateDateColumn({name: "updated_at"})
+  updatedAt: Date
 }
 
 
