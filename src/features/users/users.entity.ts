@@ -17,7 +17,7 @@ export class User extends BaseEntity {
   @Column({ name: "username", nullable: false })
   username: string
 
-  @Column({ name: " email", nullable : false })
+  @Column({ name: "email", nullable : false })
   email : string
 
   @Column({ name: "password", nullable : false })
@@ -26,9 +26,9 @@ export class User extends BaseEntity {
   @Column({ name: "is_adm", default : false })
   isAdm ?: boolean
 
-  @CreateDateColumn({name: "create_at"})
-  createAt ?: Date
+  @CreateDateColumn({name: "created_at"})
+  createdAt ?: Date
 
-  @UpdateDateColumn({name: "update_at"})
-  updateAt ?: Date
+  @UpdateDateColumn({name: "updated_at"})
+  updatedAt ?: Date
 }

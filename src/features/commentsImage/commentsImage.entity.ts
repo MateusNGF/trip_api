@@ -27,5 +27,5 @@ export class CommentImage extends BaseEntity {
   createdAt: Date
 
   @UpdateDateColumn({ name: "updated_at" })
-  updateAt: Date
+  updatedAt: Date
 }
