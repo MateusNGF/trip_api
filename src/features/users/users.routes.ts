@@ -1,17 +1,20 @@
 import {Router} from 'express'
 import { getCustomRepository, getRepository } from 'typeorm'
+import { ExpressAdapter } from '../../main'
+import { GetUsers, IUserRepository } from './controllers/GetUsers.controller'
 import { User } from './users.entity'
 import { UserRepository } from './users.repository'
 
 export const userRoutes = Router()
 
 //Get Users
-userRoutes.get('/', async (req, res) => {
-  const userRepository = getRepository(User);
-  const userList = await userRepository.find();
-
-  res.json(userList);
-});
+userRoutes.get('/',
+  ExpressAdapter.adapt(
+    new GetUsers(
+      getCustomRepository<IUserRepository>(UserRepository)
+    )
+  )
+);
 
 //Get User by id
 userRoutes.get('/:id', async (req, res) => {
