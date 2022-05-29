@@ -9,6 +9,10 @@ export class RepositoryCities implements IRepositoryCities {
     this.repository = getRepository(City)
   }
 
+  listAll(): Promise<City[]> {
+    return this.repository.find()
+  }
+
   async create(data: ICreateCityDTO): Promise<void> {
     const city = this.repository.create(data)
 

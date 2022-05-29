@@ -1,3 +1,5 @@
+import { City } from "../city.entity";
+
 export interface ICreateCityDTO {
   name: string;
   zipCode: string;
@@ -7,4 +9,5 @@ export interface ICreateCityDTO {
 
 export interface IRepositoryCities {
   create(data: ICreateCityDTO): Promise<void>
+  listAll(): Promise<City[]>
 }
