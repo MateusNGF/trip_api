@@ -9,6 +9,10 @@ export class RepositoryCities implements IRepositoryCities {
     this.repository = getRepository(City)
   }
 
+  findByNameCity(name: string): Promise<City> {
+    return this.repository.findOne({ name })
+  }
+
   listAll(): Promise<City[]> {
     return this.repository.find()
   }

@@ -10,4 +10,5 @@ export interface ICreateCityDTO {
 export interface IRepositoryCities {
   create(data: ICreateCityDTO): Promise<void>
   listAll(): Promise<City[]>
+  findByNameCity(name: string): Promise<City>
 }
