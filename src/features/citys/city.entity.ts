@@ -1,12 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity} from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity } from "typeorm"
 
 @Entity("cities")
-export class City extends BaseEntity {
-
-  constructor(city){
-    super()
-    Object.assign(this, city)
-  }
+export class City {
 
   @PrimaryGeneratedColumn()
   id?: number
@@ -17,15 +12,15 @@ export class City extends BaseEntity {
   @Column({ name: "zip_code", nullable: false })
   zipCode?: string
 
-  @Column({ name: "state", nullable : false })
+  @Column({ name: "state", nullable: false })
   state?: string
 
-  @Column({ name: "country", nullable : false })
+  @Column({ name: "country", nullable: false })
   country?: string
 
-  @CreateDateColumn({name: "create_at"})
-  createAt ?: Date
+  @CreateDateColumn({ name: "create_at" })
+  createAt?: Date
 
-  @UpdateDateColumn({name: "update_at"})
-  updateAt ?: Date
+  @UpdateDateColumn({ name: "update_at" })
+  updateAt?: Date
 }

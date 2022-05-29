@@ -1,10 +1,14 @@
-import {Router} from 'express'
-import { City } from './city.entity'
+import { Router } from 'express'
+
+import createCitiesController from './useCases/createCity'
+import listAllCitiesController from './useCases/listAllCities'
 
 export const cityRoute = Router()
 
 cityRoute.post("/create", async (req, res) => {
-    const newCity = new City(req.body)
+  return createCitiesController().handle(req, res)
+})
 
-    return res.send(await newCity.save())
+cityRoute.get('/listAll', async (req, res) => {
+  return listAllCitiesController().handle(req, res)
 })
